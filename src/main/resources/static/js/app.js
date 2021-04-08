@@ -26,4 +26,37 @@ var app = (function (){
 	var setCity = function(city_name){
 		city = city_name;
 	};
+	function table(weather) {
+	    console.log(weather)
+	    console.log(weather.main.temp);
+	    console.log(weather.main.temp_min);
+	    console.log(weather.main.temp_max);
+	    console.log(weather.main.humidity);
+	    console.log(weather.main.pressure);
+	    console.log(weather.main.feels_like);
+	    $("#body").html("");
+    		$('#body')
+    			.append(
+    			  `<tr>
+    				<td>`+weather.main.temp+`</td>
+    				<td>`+weather.main.temp_min+`</td>
+    				<td>`+weather.main.temp_max+`</td>
+    				<td>`+weather.main.humidity+`</td>
+    				<td>`+weather.main.pressure+`</td>
+    			  </tr>`
+    			);
+    	plotMarkers(weather);
+    };
+	var getWeatherByCity = function(city) {
+        setCity(city);
+        if (city != "") {
+            api.getWeatherByCity(city,table);
+        }
+    };
+	var getFunctionsByWeather =  function (b,c) {
+        console.log(b);
+        if (a != "" && b != "" ) {
+            api.getFunctionsByWeather(a,b,c,getSeats);
+        }
+    };
 })();

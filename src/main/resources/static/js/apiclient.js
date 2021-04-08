@@ -5,4 +5,14 @@ apiclient= (function () {
                 $.getJSON(url+"/"+city,(data)=>{
                     callback(data);
                 },null)
+			};
+            var  getFunctionsByWeather = function(a,b,c,callback){
+               $.getJSON(url+"/"+a+"/"+b+"/"+c,(data)=>{
+                   callback(data);
+               },null)
+            };
+            return {
+                getWeatherByCity:getWeatherByCity,
+                getFunctionsByWeather:getFunctionsByWeather,
+            }
  })();
