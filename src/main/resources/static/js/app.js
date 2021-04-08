@@ -59,4 +59,39 @@ var app = (function (){
             api.getFunctionsByWeather(a,b,c,getSeats);
         }
     };
+    function initMap(){
+        clearMap();
+        map = new google.maps.Map(document.getElementById('map-canvas'), {
+            center: {lat: -34.397, lng: 150.644},
+            zoom: 8
+        });
+    };
+    function clearMap(){
+        if (markers){
+            markers.forEach(function (marker) {
+                marker.setMap(null);
+            });
+        }
+    }
+    function plotMarkers(m) {
+        markers = [];
+        bounds = new google.maps.LatLngBounds();
+        console.log(m);
+         var position = new google.maps.LatLng(m.coord.lat, m.coord.lon);
+         markers.push(
+            new google.maps.Marker({
+                     position: position,
+                     map: map,
+                     animation: google.maps.Animation.DROP
+                 })
+         );
+        bounds.extend(position);
+        map.fitBounds(bounds);
+    }
+	return {
+	    getFunctionsByWeather : getFunctionsByWeather,
+		getWeatherByCity :  getWeatherByCity,
+        initMap:initMap,
+        plotMarkers:plotMarkers,
+	};
 })();
