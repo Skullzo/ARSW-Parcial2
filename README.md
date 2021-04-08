@@ -8,6 +8,82 @@
 
 https://github.com/Skullzo/ARSW-Parcial2
 
+## Diseño
+
+Para realizar el parcial del segundo tercio, primero se implementó una arquitectura Cliente-Servidor, donde un servicio REST consume un API, en la cual se utiliza el principio de inyección de dependencias, ya que con esto se garantiza un bajo acoplamiento, y un Front-End que hace que el cliente tenga una interfaz de usuario al momento de consumir los recursos de esta API.
+
+### Diagrama de Clases
+
+![img](https://github.com/Skullzo/ARSW-Parcial2/blob/main/images/DiagramaDeClases.PNG)
+
+### Diagrama Componente y Conector (C&C)
+
+![img](https://github.com/Skullzo/ARSW-Parcial2/blob/main/images/DiagramaC&C.PNG)
+
+## Extensión
+
+Dado que esta arquitectura fue desarrollada con el principio de inyección de dependencias, resulta muy sencillo hacer uso de las extensiones, ya que si se desea consumir recursos de otras API's solo se deben realizar las respectivas extensiones y luego incluírlas en el sistema.
+
+## Prerrequisitos
+
+Para la realización y ejecución tanto del programa como de las pruebas de este, se requieren ser instalados los siguientes programas:
+* [Maven](https://maven.apache.org/). Herramienta que se encarga de estandarizar la estructura física de los proyectos de software, maneja dependencias (librerías) automáticamente desde repositorios y administra el flujo de vida de construcción de un software.
+* [GIT](https://git-scm.com/). Sistema de control de versiones que almacena cambios sobre un archivo o un conjunto de archivos, permite recuperar versiones previas de esos archivos y permite otras cosas como el manejo de ramas (branches).
+* [Heroku](https://www.heroku.com/). Plataforma en la nube como servicio (PaaS en sus siglas en inglés) basada en contenedores. Los desarrolladores usan Heroku para implementar, administrar y escalar aplicaciones modernas.
+
+Para asegurar que el usuario cumple con todos los prerrequisitos para poder ejecutar el programa, es necesario disponer de un Shell o Símbolo del Sistema para ejecutar los siguientes comandos para comprobar que todos los programas están instalados correctamente, para así compilar y ejecutar tanto las pruebas como el programa correctamente.
+
+```
+mvn -version
+git --version
+java -version
+```
+
+## Instalación
+Para descargar el proyecto de GitHub, primero debemos clonar este repositorio, ejecutando la siguiente línea de comando en GIT.
+
+```
+git clone https://github.com/Skullzo/ARSW-Parcial2.git
+```
+
+## Ejecución
+Para compilar el proyecto utilizando la herramienta Maven, nos dirigimos al directorio donde se encuentra alojado el proyecto, y dentro de este ejecutamos en un Shell o Símbolo del Sistema el siguiente comando:
+
+```
+mvn package
+```
+
+## Pruebas
+Para realizar las pruebas correspondientes del proyecto utilizando la herramienta Maven, nos dirigimos al directorio donde se encuentra alojado el proyecto, y dentro de este ejecutamos en un Shell o Símbolo del Sistema el siguiente comando:
+
+```
+mvn test
+```
+
+Luego de haber ejecutado el comando ```mvn test``` en un Shell o Símbolo del Sistema, debe aparecer la siguiente imagen, demostrando que las pruebas han sido realizadas exitosamente.
+
+![img](https://github.com/Skullzo/ARSW-Parcial2/blob/main/images/Pruebas.PNG)
+
+Al desplegar la aplicación en Heroku, se tiene la siguiente interfaz de usuario, en la cual este puede ingresar el nombre de la respectiva ciudad que se desean saber los respectivos datos como lo son temperatura actual, temperatura mínima, temperatura máxima, humedad relativa, presión atmosférica y ubicación en el mapa de la misma.
+
+![img](https://github.com/Skullzo/ARSW-Parcial2/blob/main/images/Imagen1.PNG)
+
+Luego de escribir en el campo provisto la ciudad (Bogotá) para probar el correcto funcionamiento de la aplicación, se muestran los datos como lo son temperatura actual, temperatura mínima, temperatura máxima, humedad relativa, presión atmosférica y ubicación en el mapa de la misma.
+
+![img](https://github.com/Skullzo/ARSW-Parcial2/blob/main/images/Imagen2.PNG)
+
+Para probar que el caché está funcionando correctamente, se ingresa otra ciudad (Londres). Luego de ingresar la ciudad y presionar clic sobre el botón **Buscar**, se muestran los datos como lo son temperatura actual, temperatura mínima, temperatura máxima, humedad relativa, presión atmosférica y ubicación en el mapa de Londres, y también se muestra la ubicación de Bogotá en el mapa, la cual fue la última ciudad consultada antes de realizar la respectiva búsqueda de Londres.
+
+![img](https://github.com/Skullzo/ARSW-Parcial2/blob/main/images/Imagen3.PNG)
+
+## Construido con
+* [Maven](https://maven.apache.org/). Herramienta que se encarga de estandarizar la estructura física de los proyectos de software, maneja dependencias (librerías) automáticamente desde repositorios y administra el flujo de vida de construcción de un software.
+* [GIT](https://git-scm.com/). Sistema de control de versiones que almacena cambios sobre un archivo o un conjunto de archivos, permite recuperar versiones previas de esos archivos y permite otras cosas como el manejo de ramas (branches).
+* [JUnit](https://junit.org/junit5/). Framework de Java que permite la realización de la ejecución de clases de manera controlada, para poder comprobar que los métodos realizan su cometido de forma correcta.
+* [NetBeans](https://netbeans.apache.org/). Entorno de desarrollo integrado libre, orientado principalmente al desarrollo de aplicaciones Java. La plataforma NetBeans permite el desarrollo de aplicaciones estructuradas mediante un conjunto de componentes denominados “módulos”. Cada uno de estos módulos sería un archivo Java conteniendo un conjunto de clases que interactarán con las APIs de NetBeans. El objetivo de esta arquitectura es favorecer el desarrollo de funcionalidades de forma independiente y la reutilización de componentes.
+* [Java](https://www.oracle.com/java/). Lenguaje de programación de propósito general, es decir, que sirve para muchas cosas, para web, servidores, aplicaciones móviles, entre otros. Java también es un lenguaje orientado a objetos, y con un fuerte tipado de variables.
+* [Heroku](https://www.heroku.com/). Plataforma en la nube como servicio (PaaS en sus siglas en inglés) basada en contenedores. Los desarrolladores usan Heroku para implementar, administrar y escalar aplicaciones modernas.
+
 ## Preparación para el Parcial
 
 Con el objetivo de preparar el examen final del segundo tercio, por favor siga las siguientes instrucciones.
