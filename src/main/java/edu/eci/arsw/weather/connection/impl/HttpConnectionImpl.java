@@ -14,4 +14,24 @@ public class HttpConnectionImpl implements HttpConnection {
 		String USER_AGENT = "Mozilla/5.0";
     	String GET_URL = "http://api.openweathermap.org/data/2.5/weather?q="+city+"&appid=e628214cfe83ce10a80c350ba9ef00f0";
         URL obj = new URL(GET_URL);
+        HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+        con.setRequestMethod("GET");
+        con.setRequestProperty("User-Agent", USER_AGENT);
+        int responseCode = con.getResponseCode();
+        System.out.println("GET Response Code :: " + responseCode);
+        if (responseCode == HttpURLConnection.HTTP_OK) {
+            BufferedReader in = new BufferedReader(new InputStreamReader(
+                    con.getInputStream()));
+            String inputLine;
+            StringBuffer response = new StringBuffer();
+            while ((inputLine = in.readLine()) != null) {
+                response.append(inputLine);
+            }
+            in.close();
+            System.out.println(response.toString());
+            return response.toString();
+        } else {
+        	return null;
+        }
+	}
 }

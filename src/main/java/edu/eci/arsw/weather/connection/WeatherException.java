@@ -1,5 +1,5 @@
 package edu.eci.arsw.weather.connection;
-public class WeatherException {
+public class WeatherException extends Exception{
     public WeatherException(String message) {
         super(message);
     }
