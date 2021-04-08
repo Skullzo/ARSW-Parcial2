@@ -109,3 +109,9 @@ document.getElementById("demo").innerHTML = "name: " + obj.name + ", age: " + ob
 
 * Código de página con Mapa embebido [(Ver archivo)](index.html)
     
+## Autor
+[Alejandro Toro Daza](https://github.com/Skullzo)
+## Licencia & Derechos de Autor
+**©** Alejandro Toro Daza, Estudiante de Ingeniería de Sistemas de la [Escuela Colombiana de Ingeniería Julio Garavito](https://www.escuelaing.edu.co/es/).
+
+Licencia bajo la [GNU General Public License](https://github.com/Skullzo/ARSW-Parcial2/blob/main/LICENSE).
