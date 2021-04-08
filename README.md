@@ -64,6 +64,8 @@ Luego de haber ejecutado el comando ```mvn test``` en un Shell o Símbolo del Si
 
 ![img](https://github.com/Skullzo/ARSW-Parcial2/blob/main/images/Pruebas.PNG)
 
+----------
+
 Al desplegar la aplicación en Heroku, se tiene la siguiente interfaz de usuario, en la cual este puede ingresar el nombre de la respectiva ciudad que se desean saber los respectivos datos como lo son temperatura actual, temperatura mínima, temperatura máxima, humedad relativa, presión atmosférica y ubicación en el mapa de la misma.
 
 ![img](https://github.com/Skullzo/ARSW-Parcial2/blob/main/images/Imagen1.PNG)
